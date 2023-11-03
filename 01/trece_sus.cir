@@ -1,0 +1,24 @@
+[aimspice]
+[description]
+74
+RC trece-sus
+C1 in out 470n
+R1 out 0 1k
+
+vin in 0 dc 5 sin(0 5 1k 0 0)
+!vin in 0 dc 10 pulse(0 5 0 0 0 1e-3 2e-3)
+[tran]
+1e-9
+6e-3
+0
+0.00001
+0
+[ana]
+4 1
+0
+1 1
+1 1 0 5
+2
+v(in)
+v(out)
+[end]

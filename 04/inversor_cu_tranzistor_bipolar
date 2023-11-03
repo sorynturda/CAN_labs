@@ -1,0 +1,37 @@
+[aimspice]
+[description]
+218
+invertor cu tranzistor bipolar
+R1 in B 1k
+V1 Ec 0 dc 5
+Rc Ec Out 1k
+Rb B Eb 7k
+V2 EB B dc -1
+C in B 5p
+
+Q Out B 0 Tbipolar
+
+.Model Tbipolar npn tr=5e-9, tf=8e-9
+Vin in 0 dc 5 pulse(0 5 0 1e-9 1e-9 1e-7 2e-7)
+[dc]
+1
+Vin
+0
+5
+0.1
+[tran]
+1e-9
+6e-7
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -5 10
+3
+v(in)
+v(b)
+v(out)
+[end]

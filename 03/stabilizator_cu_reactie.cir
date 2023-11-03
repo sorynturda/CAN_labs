@@ -1,0 +1,47 @@
+[aimspice]
+[description]
+283
+stabilizator cu reactie fara amplificator de eroare
+D1 1 2 Dioda
+D4 3 2 Dioda
+D2 0 1 Dioda
+D3 0 3 Dioda
+R 4 0 100
+RB Vz 2 220
+C 0 2 3m
+D5 0 Vz Zener
+Q1 2 Vz 4 Tbipolar
+.Model Dioda D 
+.Model Zener D bv=5.6
+.Model Tbipolar npn tr=1e-9, tf=1e-9
+Vin 1 3 dc sin (0 8 50 0 0)
+[tran]
+1e-9
+60e-3
+X
+X
+0
+[ana]
+4 4
+0
+1 1
+1 1 -3.41661E-22 5
+1
+v(4)
+0
+1 1
+1 1 -3.36976E-12 8
+1
+v(2)
+0
+1 1
+1 1 -8.50562E-16 8
+2
+v(2)
+v(4)
+0
+1 1
+1 1 0 5
+1
+v(4)
+[end]
