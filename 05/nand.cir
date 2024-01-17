@@ -1,0 +1,47 @@
+[aimspice]
+[description]
+407
+poarta si nu
+V1 CC 0 dc 5
+VA A 0 dc 5 pulse(0 5 0 1e-9 1e-9 1e-6 2e-6)
+VB B 0 dc 5
+R1 CC 1 4k
+R2 CC 2 1.6k
+R3 CC 3 130
+C OUT 0 15p
+R4 5 0 1k
+D1 0 A Dioda
+D2 0 B Dioda
+D3 6 OUT Dioda
+Q1_A 4 1 A Tbipolar
+Q1_B 4 1 B Tbipolar
+Q2 2 4 5 Tbipolar
+Q3 OUT 5 0 Tbipolar
+Q4 3 2 6 Tbipolar
+
+.Model Tbipolar npn tr=5e-9, tf=8e-9
+.Model Dioda D tt=5e-9
+
+!Vin A 0 dc 5 pulse(0 5 0 1e-9 1e-9 1e-6 2e-6)
+[dc]
+1
+VA
+0
+5
+0.1
+[tran]
+1e-9
+6e-6
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 0 5
+3
+v(a)
+v(b)
+v(out)
+[end]

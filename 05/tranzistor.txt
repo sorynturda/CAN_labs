@@ -1,0 +1,16 @@
+tranzistor npm
+1. BC f
+   BE f
+	saturatie
+
+2. BC r
+   BE r
+	cut-off nu vine nimic in baza
+
+3. BC r
+   BE f
+	active forward
+
+4. BC f
+   BE r
+	reverse active

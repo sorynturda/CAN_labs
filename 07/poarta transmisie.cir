@@ -1,0 +1,35 @@
+[aimspice]
+[description]
+187
+poarta transmisie
+V1 dd 0 dc 5
+V2 ss 0 dc 0
+V3 in 0 dc 0
+VA a 0 dc 5
+VNA na 0 dc 0
+
+
+MP in na out dd MOS1
+MN in a out ss MOS
+
+.Model MOS nmos vto 1.5
+.Model MOS1 pmos vto -1.5
+[dc]
+1
+V3
+0
+5
+0.1
+[ana]
+1 2
+0
+1 1
+1 1 0 5
+1
+v3
+0
+1 1
+1 1 0 5
+1
+v(out)
+[end]

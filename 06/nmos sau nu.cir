@@ -1,0 +1,31 @@
+[aimspice]
+[description]
+227
+nmos sau nu
+V1 GG 0 dc 7.5
+V2 DD 0 dc 5
+VB B 0 dc 0
+VA A 0 dc 5 pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
+M1 DD GG out out MOS L=10u, W=1u
+MA out A 0 0 MOS L=1u, W=10u
+MB out B 0 0 MOS L=1u, W=10u
+
+.Model MOS nmos vto 2.5
+
+
+[dc]
+1
+VA
+0
+5
+0.1
+[ana]
+1 1
+0
+1 1
+1 1 -1 6
+3
+va
+v(b)
+v(out)
+[end]

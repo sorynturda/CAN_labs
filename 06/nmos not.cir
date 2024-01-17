@@ -1,0 +1,30 @@
+[aimspice]
+[description]
+205
+nmos nu
+V1 GG 0 dc 7.5
+V2 DD 0 dc 5
+M2 DD GG out out MM L=25u, W=1u
+M1 out in 0 0 M L=1u, W=1u
+
+.Model MM nmos  vto 2.5
+.Model M nmos  vto 1.5
+
+Vin in 0 dc 5 pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
+
+
+[tran]
+1e-10
+6e-9
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -2 7
+2
+v(out)
+v(in)
+[end]
